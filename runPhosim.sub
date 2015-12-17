@@ -1,0 +1,11 @@
+#!/bin/sh -l
+#PBS -l nodes=1:ppn=1,naccesspolicy=shared
+#PBS -l walltime=24:00:00
+cd $PBS_O_WORKDIR
+python /scratch/conte/e/epeng/sims_phosim/phosim.py $PBS_O_WORKDIR/S82_u.trim -w $PBS_O_WORKDIR/work -o $PBS_O_WORKDIR/2014040.out -s 'R22_S11'
+python /scratch/conte/e/epeng/sims_phosim/phosim.py $PBS_O_WORKDIR/S82_g.trim -w $PBS_O_WORKDIR/work -o $PBS_O_WORKDIR/2014041.out -s 'R22_S11'
+python /scratch/conte/e/epeng/sims_phosim/phosim.py $PBS_O_WORKDIR/S82_r.trim -w $PBS_O_WORKDIR/work -o $PBS_O_WORKDIR/2014042.out -s 'R22_S11'
+python /scratch/conte/e/epeng/sims_phosim/phosim.py $PBS_O_WORKDIR/S82_i.trim -w $PBS_O_WORKDIR/work -o $PBS_O_WORKDIR/2014043.out -s 'R22_S11'
+python /scratch/conte/e/epeng/sims_phosim/phosim.py $PBS_O_WORKDIR/S82_z.trim -w $PBS_O_WORKDIR/work -o $PBS_O_WORKDIR/2014044.out -s 'R22_S11'
+
+./rename.csh
