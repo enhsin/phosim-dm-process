@@ -1,7 +1,7 @@
 # phosim-dm-process
 
 #### Install DM Stack on Purdue RCAC clusters
-The formal DM installation instruction can be found [here](https://confluence.lsstcorp.org/display/LSWUG/Building+the+LSST+Stack+from+Source).
+We install the Stack on data depot because RCAC doesn't impose a limit on the number of files and a 90-day purge policy for this storage. The size of the Stack is 14GB, containing 110k files (v11.0). The formal DM installation instruction can be found [here](https://confluence.lsstcorp.org/display/LSWUG/Building+the+LSST+Stack+from+Source). 
 ```
 module load gcc/4.9.2
 cd /depot/lsst/apps
@@ -16,7 +16,7 @@ Then answer Yes to continuiung without git and installing Anaconda Python distri
 ```
 eups distrib install -t v11_0 lsst_apps
 ```
-For some unknown reasons, this command doesn't work on conte.rcac, but it can work on hansen.rcac. To test your new installation, follow [this](https://confluence.lsstcorp.org/display/LSWUG/Testing+the+Installation) demo.
+For some reasons, this command doesn't work on Conte frontends. I log into a Hansen frontend to complete this step. To test your new installation, follow [this](https://confluence.lsstcorp.org/display/LSWUG/Testing+the+Installation) instruction.
 
 #### Download DM tutorial scripts
 ```
