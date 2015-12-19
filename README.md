@@ -4,6 +4,7 @@
 The formal DM installation instruction can be found [here](https://confluence.lsstcorp.org/display/LSWUG/Building+the+LSST+Stack+from+Source).
 ```
 module load gcc/4.9.2
+cd /depot/lsst/apps
 mkdir lsststack
 cd lsststack
 curl -OL https://sw.lsstcorp.org/eupspkg/newinstall.sh
