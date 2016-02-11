@@ -278,7 +278,7 @@ def dbLoad(ns, sql):
                                          corner4Ra, corner4Decl);
         SHOW WARNINGS;"""
     # Load Science_Ccd_Exposure table
-    sql.execStmt(loadStmt)
+    sql.execStmt(loadStmt, options=['--local-infile=1', '-vvv'])
     # Load Science_Ccd_Exposure_Metadata table with key,value pairs from FITS headers
     sql.execStmt(str.format("""
         LOAD DATA LOCAL INFILE '{}'
@@ -292,7 +292,7 @@ def dbLoad(ns, sql):
             doubleValue,
             stringValue);
         SHOW WARNINGS;
-        """, os.path.abspath(os.path.join(ns.outroot, 'Science_Ccd_Exposure_Metadata.csv'))))
+        """, os.path.abspath(os.path.join(ns.outroot, 'Science_Ccd_Exposure_Metadata.csv'))), options=['--local-infile=1', '-vvv'])
     # Load HTM indexes for 4-corner polygons
     sql.execStmt(str.format("""
         LOAD DATA LOCAL INFILE '{}'
@@ -300,7 +300,7 @@ def dbLoad(ns, sql):
             scienceCcdExposureId,
             htmId10);
         SHOW WARNINGS;
-        """, os.path.abspath(os.path.join(ns.outroot, 'Science_Ccd_Exposure_To_Htm10.tsv'))))
+        """, os.path.abspath(os.path.join(ns.outroot, 'Science_Ccd_Exposure_To_Htm10.tsv'))), options=['--local-infile=1', '-vvv'])
 
 
 _validKeys = {
