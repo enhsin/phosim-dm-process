@@ -153,7 +153,7 @@ class CsvGenerator(object):
         corner3 = wcs.pixelToSky(x0 + width - 0.5, y0 + height - 0.5).toIcrs()
         corner4 = wcs.pixelToSky(x0 + width - 0.5, y0 - 0.5).toIcrs()
         # compute FWHM
-        attr = measAlg.PsfAttributes(psf, x0 + width // 2, y0 + height // 2)
+        attr = measAlg.PsfAttributes(psf, int(x0) + width // 2, int(y0) + height // 2)
         fwhm = attr.computeGaussianWidth() * wcs.pixelScale().asArcseconds() * sigmaToFwhm
         # Build array of column values for one Science_Ccd_Exposure metadata row
         record = [scienceCcdExposureId]
